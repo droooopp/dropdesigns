@@ -1,0 +1,457 @@
+@charset "utf-8";
+
+/*!
+ * SAITO SEIYA PORTFOLIO
+ * http://saitoseiya.com/
+ * Developer: Takayuki Suzuki
+ *
+ * 2017.05.23: リリース
+ */
+
+
+
+/**
+ * ------------------------------------------------------------
+ * 共通
+ * ------------------------------------------------------------
+ */
+body { font-family:"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Lucida Grande", Verdana, "ＭＳ Ｐゴシック", sans-serif; font-smoothing:antialiased; -webkit-text-size-adjust:100%; }
+.pcNone { display:none; }
+.spNone { display:inline-block; }
+
+
+/**
+ * ------------------------------------------------------------
+ * ヘッダー
+ * ------------------------------------------------------------
+ */
+.header { }
+.header_container { position:fixed; top:-60px; width:100%; background-color:rgba(0, 0, 0, 0.5); z-index:8;
+	-moz-box-shadow:0 0 4px 1px rgba(0,0,0,0.3);
+	-webkit-box-shadow:0 0 4px 1px rgba(0,0,0,0.3);
+	box-shadow:0 0 4px 1px rgba(0,0,0,0.3);
+	-webkit-backdrop-filter: saturate(180%) blur(10px);
+	backdrop-filter: saturate(180%) blur(10px);
+	transition:0.6s;
+}
+.header_naviWrap { margin:auto; width:505px;}
+.header_naviWrap:after { content:""; display:block; clear:both; }
+.header_btn { float:left; }
+.header_btn a { padding:15px 20px; display:inline-block; transition:0.4s; }
+.header_btn a:hover { opacity:0.4; }
+.header_btn a img { vertical-align:bottom; height:19px; }
+.header_btn + .header_btn {}
+
+
+
+/**
+ * ------------------------------------------------------------
+ * ヒーロー
+ * ------------------------------------------------------------
+ */
+.hero {}
+
+
+/* スライダー -------------------- */
+.hero_container { position:relative; height:100vh; overflow:hidden; }
+.hero_slider { z-index:1; }
+.hero_sliderImg { height:100vh; background: center / cover no-repeat; }
+.hero_sliderImg:first-child { background-image:url(../img/hero/bg/hero_bg01.jpg); }
+.hero_sliderImg:nth-child(2) { background-image:url(../img/hero/bg/hero_bg02.jpg); }
+.hero_sliderImg:nth-child(3) { background-image:url(../img/hero/bg/hero_bg03.jpg); }
+.hero_sliderImg:nth-child(4) { background-image:url(../img/hero/bg/hero_bg04.jpg); }
+.hero_sliderImg:nth-child(5) { background-image:url(../img/hero/bg/hero_bg05.jpg); }
+.hero_sliderImg:nth-child(6) { background-image:url(../img/hero/bg/hero_bg06.jpg); }
+.hero_sliderImg:nth-child(7) { background-image:url(../img/hero/bg/hero_bg07.jpg); }
+.hero_sliderImg:nth-child(8) { background-image:url(../img/hero/bg/hero_bg08.jpg); }
+
+
+/* インナー -------------------- */
+.hero_inner { position:absolute; top:50%; left:50%; z-index:2; margin:-40px 0 0 -406px; }
+.hero_naviWrap { width:365px; margin:30px auto 0; }
+.hero_naviWrap:after { content:""; display:block; clear:both; }
+.hero_btn { float:left; }
+.hero_btn + .hero_btn { margin-left:30px; }
+.hero_btn a { transition:0.4s; }
+.hero_btn a:hover { opacity:0.4; }
+
+
+/* オーバーレイ -------------------- */
+.hero_overlay { position:absolute; top:0; left:0; z-index:1; width:100vw; height:100vh; background-color:rgba(0,0,0,0); }
+
+
+
+/**
+ * ------------------------------------------------------------
+ * ギャラリー
+ * ------------------------------------------------------------
+ */
+.gallery {}
+.gallery_container { padding:90px 0 0; }
+.gallery_ttl { text-align:center; position:relative; }
+.gallery_ttl:after { content:""; position:absolute; bottom:-22px; left:50%; width:46px; height:4px; margin:0 0 0 -23px; background-color:#f40898; }
+
+
+/* スライダー -------------------- */
+.gallery_listContainer { margin-top:100px; }
+.gallery_list { width:100%; outline:none; }
+.gallery_list:after{ content:""; display:block; clear:both; }
+.gallery_listItem { float:left; width:20%; overflow:hidden; cursor:pointer; outline:none; }
+.gallery_listItem img { width:100%; vertical-align:bottom; outline:none; transition:0.4s; }
+.gallery_listItem:hover img { transform:scale(1.1); opacity:0.8; }
+
+
+
+/* スリック -------------------- */
+.slick-arrow { width:30px; height:30px; margin:0 40px 0 0; background-size:cover; color:transparent; background-color:transparent; border:none; outline:none; line-height:0; font-size:0; position:absolute; top:50%; margin:-15px 0 0 0; z-index:1; cursor:pointer; transition:0.4s; }
+.slick-arrow:hover { opacity:0.4; }
+.slick-prev { background-image:url(../img/common/prev_btn.png); left:30px; }
+.slick-next { background-image:url(../img/common/next_btn.png); right:30px; }
+
+
+
+/**
+ * ------------------------------------------------------------
+ * プロフィール
+ * ------------------------------------------------------------
+ */
+.profile {}
+.profile_container { width:1000px; margin:auto; padding:90px 0 50px; }
+.profile_ttl { text-align:center; position:relative; }
+.profile_ttl:after { content:""; position:absolute; bottom:-22px; left:50%; width:46px; height:4px; margin:0 0 0 -23px; background-color:#f40898; }
+.profile_list { margin-top:120px; }
+.profile_list:after{ content:""; display:block; clear:both; }
+.profile_listItem { float:left; }
+.profile_listItem + .profile_listItem { margin-left:40px; }
+
+
+/* プロフィール画像 -------------------- */
+.profile_thumb { position:relative; }
+.profile_thumb:before { content:""; width:222px; height:222px; background:#fff945; position:absolute; top:50%; left:111px; margin:-111px 0 0 0; z-index:-1; }
+.profile_thumb img { width:210px; }
+
+
+/* ヒストリー -------------------- */
+.profile_historyList { width:750px; display:table; margin-top:15px; }
+.profile_historyListItem { width:50%; display:table-cell; font-size:11px; color:#404040; line-height:1.5; }
+.profile_historyListItem + .profile_historyListItem { padding-left:20px; }
+.profile_historyBlock { display:table; }
+.profile_historyYear,
+.profile_historyTxt { display:table-cell; }
+.profile_historyTxt { padding-left:10px; }
+
+
+
+/**
+ * ------------------------------------------------------------
+ * スキル
+ * ------------------------------------------------------------
+ */
+.skill {}
+.skill_container { width:1000px; margin:auto; padding:90px 0 0; }
+.skill_ttl { text-align:center; position:relative; }
+.skill_ttl:after { content:""; position:absolute; bottom:-22px; left:50%; width:46px; height:4px; margin:0 0 0 -23px; background-color:#f40898; }
+
+
+/* リスト -------------------- */
+.skill_list { margin-top:60px; }
+.skill_list:after{ content:""; display:block; clear:both; }
+.skill_listItem { float:left; width:252px; margin-right:122px; margin-bottom:50px; }
+.skill_listItem:nth-child(3n) { margin-right:0; }
+.skill_listItemTtl { text-align:center; }
+.skill_listItemLead { margin-top:5px; font-size:12px; color:#808080; line-height:1.7; }
+.skill_listItemLead p { word-break:break-all; }
+
+
+
+/**
+ * ------------------------------------------------------------
+ * お問い合わせ
+ * ------------------------------------------------------------
+ */
+.form { background-color:#f2f2f2; margin-top:90px; }
+.form_container { width:690px; margin:auto; padding:90px 0 80px; }
+.form_ttl { text-align:center; position:relative; }
+.form_ttl:after { content:""; position:absolute; bottom:-22px; left:50%; width:46px; height:4px; margin:0 0 0 -23px; background-color:#f40898; }
+
+
+/* フォーム -------------------- */
+.form_actionInner { margin-top:60px; }
+.form_input { padding:18px 0; background:none; border:none; outline:0; border-bottom:1px solid #a5a5a5; width:100%; color:#4c4c4c; font-size:14px; border-radius:0; }
+.form_textArea { padding:18px 0; background:none; border:none; outline:0; border-bottom:1px solid #a5a5a5; width:100%; color:#4c4c4c; font-size:14px; border-radius:0; height:110px; resize:none; }
+.form_button { padding:15px 0; width:420px; text-align:center; display:block; margin:50px auto 0; font-size:13px; color:#fff; border:none; background-color:#333; cursor:pointer; transition:0.4s; }
+.form_button:hover { opacity:0.8; }
+.form_input::-webkit-input-placeholder,
+.form_textArea::-webkit-input-placeholder { color:#4c4c4c; }
+.form_input:-ms-input-placeholder,
+.form_textArea::-webkit-input-placeholder { color:#4c4c4c; }
+.form_input::-moz-placeholder,
+.form_textArea::-webkit-input-placeholder { color:#4c4c4c; }
+
+
+
+/**
+ * ------------------------------------------------------------
+ * フッター
+ * ------------------------------------------------------------
+ */
+.footer { }
+.footer_container { padding:30px 0; }
+.footer_text { display:block; text-align:center; font-size:12px; color:#8f8f8f; }
+
+
+
+/**
+ * ------------------------------------------------------------
+ * モーダル
+ * ------------------------------------------------------------
+ */
+.modal_overlay { display:none; position:fixed; top:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:10; }
+.modal_container { }
+.modal_content { display:none; position:absolute; top:50px; left:50%; max-width:1180px; margin:0 0 0 -590px; z-index:100; background-color:#fff; }
+@media screen and (max-width: 1180px) {
+	.modal_container { padding:0 4%; }
+	.modal_content { display:none; position:absolute; top:50px; left:auto; width:92%; margin:0; z-index:100; background-color:#fff; }
+}
+.modal_content-photo { }
+.modal_contentInner { padding:19px; }
+.modal_contentCaption {}
+.modal_contentH { font-size:26px; color:#4c4c4c; }
+.modal_contentLead { width:100%; margin-top:20px; font-size:12px; color:#737373; line-height:1.6; }
+.modal_contentLeadTtl {}
+.modal_contentLeadTxt {}
+.modal_contentList { width:100%; margin-top:20px; font-size:12px; color:#737373; line-height:1.6; }
+.modal_contentList:after{ content:""; display:block; clear:both; }
+.modal_contentListItem { float:left; width:50%; }
+.modal_contentColumnTxtList { width:100%; }
+.modal_contentColumnTxtList:after{ content:""; display:block; clear:both; }
+.modal_contentColumnTxtListItem { float:left; width:25%; }
+.modal_contentIco { width:16px; height:16px; margin-left:5px; }
+.modal_contentIco img { margin-bottom:-2px; }
+.modal_contentCaption + .modal_contentImg { margin-top:30px; }
+.modal_contentImg {  }
+.modal_contentImg img { width:100%; }
+.modal_close { width:30px; position:absolute; top:-15px; right:-15px; transition:0.6s; cursor:pointer; }
+.modal_close img { width:100%; }
+.modal_close:hover { opacity:0.8; }
+.loading { width:40px!important; height:40px; background-image:url(../img/common/loader.gif); background-size:cover; margin:60px auto; display:block; }
+
+
+
+/**
+ * ------------------------------------------------------------
+ * コンタクトモーダル
+ * ------------------------------------------------------------
+ */
+.contactModal_overlay { display:none; position:fixed; top:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:101; }
+.contactModal_content { display:none; position:fixed; top:140px; left:50%; width:600px; margin:0 0 0 -300px; z-index:102; background:rgba(255,255,255,0.8); }
+.contactModal_wapper { padding:100px 30px; }
+.contactModal_txt { text-align:center; font-size:14px; letter-spacing:5px; line-height:2; }
+.contactModal_close { width:30px; position:absolute; top:-15px; right:-15px; transition:0.6s; cursor:pointer; }
+.contactModal_close img { width:100%; }
+.contactModal_close:hover { opacity:0.8; }
+
+
+
+
+
+/**
+ *
+ *
+ * ------------------------------------------------------------------------------------------------------------------------
+ * スマホ用レイアウト
+ * ------------------------------------------------------------------------------------------------------------------------
+ *
+ *
+ */
+@media screen and (max-width: 767px) {
+	/**
+	 * ------------------------------------------------------------
+	 * 共通
+	 * ------------------------------------------------------------
+	 */
+	.pcNone { display:inline-block; }
+	.spNone { display:none; }
+
+
+
+	/**
+	 * ------------------------------------------------------------
+	 * ヘッダー
+	 * ------------------------------------------------------------
+	 */
+	.header { }
+	.header_container { position:fixed; top:auto; bottom:-80px; width:100%; background-color:rgba(0, 0, 0, 0.5); z-index:8; }
+	.header_naviWrap { margin:auto; width:100%; display:table; }
+	.header_btn { display:table-cell; width:16.66666666666667%; text-align:center; }
+	.header_btn img { height:14px!important; }
+	.header_btn { padding:0; }
+	.header_btn a { display:block; padding:15px 0; }
+	.header_btn a:hover { opacity:1; }
+	.header_btn + .header_btn {}
+
+
+
+	/**
+	 * ------------------------------------------------------------
+	 * ヒーロー
+	 * ------------------------------------------------------------
+	 */
+	.hero {}
+
+
+	/* インナー -------------------- */
+	.hero_inner { position:absolute; top:50%; left:50%; z-index:2; margin:-165px 0 0 -140px; }
+	.hero_ttl { width:280px; height:66px; background-image:none,url(../img/hero/hero_ttl_sp.svg); background-size:cover; }
+	.hero_ttl img { display:none; }
+	.hero_naviWrap { width:280px; margin:30px auto 0; }
+	.hero_btn { float:inherit; text-align:center; }
+	.hero_btn a:hover { opacity:1; }
+	.hero_btn + .hero_btn { margin-left:0; margin-top:20px; }
+
+
+	/* スライダー -------------------- */
+	.hero_sliderImg:first-child { background-image:url(../img/hero/bg/hero_bg_sp01.jpg); }
+	.hero_sliderImg:nth-child(2) { background-image:url(../img/hero/bg/hero_bg_sp02.jpg); }
+	.hero_sliderImg:nth-child(3) { background-image:url(../img/hero/bg/hero_bg_sp03.jpg); }
+	.hero_sliderImg:nth-child(4) { background-image:url(../img/hero/bg/hero_bg_sp04.jpg); }
+	.hero_sliderImg:nth-child(5) { background-image:url(../img/hero/bg/hero_bg_sp05.jpg); }
+	.hero_sliderImg:nth-child(6) { background-image:url(../img/hero/bg/hero_bg_sp06.jpg); }
+	.hero_sliderImg:nth-child(7) { background-image:url(../img/hero/bg/hero_bg_sp07.jpg); }
+	.hero_sliderImg:nth-child(8) { background-image:url(../img/hero/bg/hero_bg_sp08.jpg); }
+
+
+
+	/**
+	 * ------------------------------------------------------------
+	 * ギャラリー
+	 * ------------------------------------------------------------
+	 */
+	.gallery {}
+	.gallery_container { padding:40px 25px 0; }
+
+
+	/* スライダー -------------------- */
+	.gallery_listContainer { margin-top:50px; }
+	.gallery_listItem { float:left; width:50%; overflow:hidden; cursor:pointer; }
+	.gallery_listItem:hover img { transform:scale(1); opacity:1; }
+
+
+	/* スリック -------------------- */
+	.slick-prev { background-image:url(../img/common/prev_btn.png); left:-15px; }
+	.slick-next { background-image:url(../img/common/next_btn.png); right:-15px; }
+	.slick-arrow:hover { opacity:1; }
+
+
+
+	/**
+	 * ------------------------------------------------------------
+	 * プロフィール
+	 * ------------------------------------------------------------
+	 */
+	.profile { padding:0 15px; }
+	.profile_container { width:100%; margin:auto; padding:60px 0 10px; }
+	.profile_list { margin-top:70px; }
+	.profile_listItem { float:inherit; }
+	.profile_listItem + .profile_listItem { margin-left:0; margin-top:34px; }
+
+
+	/* プロフィール画像 -------------------- */
+	.profile_thumb { position:relative; width:200px; margin:0 auto; }
+	.profile_thumb:before { content:""; width:200px; height:160px; background:#fff945; position:absolute; top:50%; left:50%; margin:-80px 0 0 -50px; z-index:-1; }
+	.profile_thumb img { width:100%; }
+
+
+	/* ヒストリー -------------------- */
+	.profile_historyList { width:100%; display:block; margin-top:15px; }
+	.profile_historyListItem { width:100%; display:block; font-size:12px; }
+	.profile_historyListItem + .profile_historyListItem { padding-top:20px; padding-left:0; }
+	.profile_name { text-align:center; }
+
+
+
+	/**
+	 * ------------------------------------------------------------
+	 * スキル
+	 * ------------------------------------------------------------
+	 */
+	.skill { padding:0 15px; }
+	.skill_container { width:100%; margin:auto; padding:60px 0 0; }
+
+
+	/* リスト -------------------- */
+	.skill_list { margin-top:60px; margin-right:0;}
+	.skill_listItem { float:left; width:48%; margin-right:4%; margin-bottom:20px; }
+	.skill_listItem:nth-child(3n) { margin-right:4%; }
+	.skill_listItem:nth-child(2n) {  margin-right:0; }
+	.skill_listItemLead { margin-top:5px; font-size:11px; line-height:1.5; }
+
+
+
+	/**
+	 * ------------------------------------------------------------
+	 * お問い合わせ
+	 * ------------------------------------------------------------
+	 */
+	.form { background-color:#f2f2f2; margin-top:40px; padding:0 15px; }
+	.form_container { width:100%; margin:auto; padding:60px 0 80px; }
+
+	/* フォーム -------------------- */
+	.form_actionInner { margin-top:40px; }
+	.form_input { padding:10px 0; }
+	.form_textArea { padding:10px 0; }
+	.form_button { padding:15px 0; width:100%; text-align:center; display:block; margin:50px auto 0; font-size:13px; color:#fff; border:none; background-color:#333; cursor:pointer; transition:0.4s; }
+	.form_button:hover { opacity:1; }
+
+
+
+	/**
+	 * ------------------------------------------------------------
+	 * フッター
+	 * ------------------------------------------------------------
+	 */
+	.footer { padding-bottom:65px; }
+
+
+
+	/**
+	 * ------------------------------------------------------------
+	 * モーダル
+	 * ------------------------------------------------------------
+	 */
+	.modal_overlay { display:none; position:fixed; top:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:10; }
+	.modal_container { padding:0 4%; }
+	.modal_content { display:none; position:absolute; top:50px; left:auto; width:92%; margin:0; z-index:100; background-color:#fff; }
+	.modal_contentInner { padding:5px; }
+
+	.modal_contentCaption { padding-top:10px; }
+	.modal_contentH { font-size:20px; text-align:center; }
+	.modal_contentLead { width:100%; margin-top:10px; font-size:11px; color:#737373; line-height:1.6; }
+	.modal_contentList { width:100%; margin-top:10px; font-size:11px; color:#737373; line-height:1.6; }
+	.modal_contentList:after{ content:""; display:block; clear:both; }
+	.modal_contentListItem { float:inherit; width:100%; }
+	.modal_contentListItem + .modal_contentListItem { margin-top:10px; }
+	.modal_contentColumnTxtList { width:100%; }
+	.modal_contentColumnTxtList:after{ content:""; display:block; clear:both; }
+	.modal_contentColumnTxtListItem { float:left; width:50%; }
+	.modal_contentIco { width:16px; height:16px; margin-left:5px; }
+	.modal_contentIco img { margin-bottom:-2px; }
+	.modal_contentCaption + .modal_contentImg { margin-top:15px; }
+
+	.modal_close { position:absolute; top:-15px; right:-15px; transition:0.6s; cursor:pointer; }
+	.modal_close:hover { opacity:1; }
+
+
+
+	/**
+	 * ------------------------------------------------------------
+	 * コンタクトモーダル
+	 * ------------------------------------------------------------
+	 */
+	.contactModal_container { margin:0 15px; }
+	.contactModal_content { top:50px; left:auto; width:92%; margin:auto; }
+	.contactModal_wapper { padding:30px 10px; }
+	.contactModal_txt { text-align:left; font-size:12px; letter-spacing:1px; line-height:2; }
+
+
+}

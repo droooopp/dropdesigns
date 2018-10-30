@@ -1,0 +1,233 @@
+/*!
+ * D-ROP Designs
+ * https://dropdesigns.tokyo
+ *
+ * 2018.06.01
+ */
+
+
+
+@charset "UTF-8";
+/**
+ * ------------------------------------------------------------
+ * SPデザイン
+ * ------------------------------------------------------------
+ */
+
+
+
+/* ----------------------------------------
+ * ヒーロー
+ * ---------------------------------------- */
+#hero { position:relative; padding:35px 0 20px; margin:0 0 20px; }
+.hero_image { position:relative; width:300px; margin:auto; padding-top:280px; border-radius:150px; overflow:hidden; z-index:1; opacity:0; transform:rotate(-180deg); border:10px solid rgba(255,255,255,0.6); background-color:rgba(255,255,255,0.6); box-sizing:border-box;
+	-webkit-transition:transform 1.6s;
+	transition:transform 1.6s;
+}
+.hero_image:after { content:""; position:absolute; top:50%; left:50%; margin:-20px 0 0 -20px; box-sizing:border-box; width:40px; height:40px; border-radius:100%; border:4px solid rgba(251,55,125,0.2); border-top-color:#fb377d; animation:spin 1s infinite linear; }
+.hero_image-show { transform:rotate(0deg); }
+.hero_image img { position:absolute; top:0; right:0; bottom:0; left:0; width:100%; height:auto; margin:auto; vertical-align:bottom; z-index:1; }
+.hero_body { position:relative; top:50px; opacity:0; }
+.hero_body:after { content:""; display:block; position:absolute; width:150px; height:150px; background:linear-gradient(70deg, #dd8467, #fb377d); transform:rotate(45deg); z-index:0; top:-30px; left:50%; margin-left:-75px; }
+.hero_bodyContainer { min-height:110px; }
+.hero_ttl { position:relative; margin:15px 20px 0; text-align:center; font-size:30px; line-height:1.2; color:#fb377d; letter-spacing:6px; text-shadow:2px 2px 0 #fff; z-index:1;
+	background:-webkit-linear-gradient(35deg, #dd8467 35%,#fb377d 70%);
+	-webkit-text-fill-color:transparent;
+	-webkit-background-clip:text;
+}
+.hero_ttl span { margin-left:10px; font-size:18px; }
+.hero_client { position:relative; margin:10px 30px 0; text-align:center; z-index:1; }
+.hero_visit { position:relative; margin:30px auto 0; width:180px; z-index:2;}
+.hero_visitLink { text-align:center; padding:12px 0 10px; text-decoration:none; display:block; font-size:16px; letter-spacing:10px; color:#fff; border:2px solid #fff; border-radius:30px; background-color:#fb377d; }
+
+
+
+/* ----------------------------------------
+ * コンセプト
+ * ---------------------------------------- */
+#concept { margin:40px 0 0; overflow:hidden; }
+.concept_container { margin:0 30px; }
+.concept_ttl { position:relative; text-align:center; font-size:26px; line-height:1.6; color:#fb377d; letter-spacing:5px;
+	background:-webkit-linear-gradient(105deg, #dd8467 35%,#fb377d 70%);
+	-webkit-text-fill-color:transparent;
+	-webkit-background-clip:text;
+}
+.concept_ttl:after { content:""; display:block; position:absolute; width:1px; height:30px; bottom:-25px; left:50%; margin-left:-1px;  background:linear-gradient(180deg, #dd8467, #fb377d); }
+.concept_lead { margin-top:40px; text-align:left; font-size:14px; line-height:1.6; }
+.concept_lead a { color:#fb377d; word-wrap:break-word; }
+
+
+
+/* ----------------------------------------
+ * 画像
+ * ---------------------------------------- */
+#image { margin:30px 0 100px; overflow:hidden; }
+#code + #image { margin-top:-70px; }
+.image_container { margin:0 30px; }
+.image_item + .image_item { margin-top:30px; }
+.image_itemText { position:relative; padding:0 0 0 25px; font-size:14px; line-height:1.4; }
+.image_itemText:after { content:""; display:block; width:10px; height:10px; position:absolute; top:50%; left:3px; margin-top:-7px; background:linear-gradient(180deg, #dd8467, #fb377d); transform:rotate(45deg); }
+.image_itemText + .image_itemImg { margin-top:10px; }
+.image_itemImg { position:relative; min-height:100px; background-color:rgba(255,255,255,0.6) }
+.image_itemImg:after { content:""; position:absolute; top:50%; left:50%; margin:-20px 0 0 -20px; box-sizing:border-box; width:40px; height:40px; border-radius:100%; border:4px solid rgba(251,55,125,0.2); border-top-color:#fb377d; animation:spin 1s infinite linear; }
+.image_itemImg-show:after { content:none; }
+/* アニメーションキーフレーム -------------------- */
+@keyframes spin {
+	100% { transform:rotate(360deg); }
+}
+.image_itemImgMask { position:absolute; content:""; display:block; width:100%; height:100%; background:#1d1d1d; top:0; left:0; }
+.image_itemImg img { width:100%; vertical-align:bottom; }
+
+
+
+/* ----------------------------------------
+ * コード
+ * ---------------------------------------- */
+#code { margin:30px 0 100px; overflow:hidden; }
+#image + #code { margin-top:-50px; }
+.code_container { margin:0 30px; }
+.code_item + .code_item { margin-top:30px; }
+.code_itemText { position:relative; padding:0 0 0 25px; font-size:14px; line-height:1.4; }
+.code_itemText:after { content:""; display:block; width:10px; height:10px; position:absolute; top:50%; left:3px; margin-top:-7px; background:linear-gradient(180deg, #dd8467, #fb377d); transform:rotate(45deg); }
+.code_itemText + .code_itemImg { margin-top:10px; }
+
+
+
+
+/* ----------------------------------------
+ * アウトロ
+ * ---------------------------------------- */
+#outro { position:relative; margin:60px 0 0; padding:40px 30px; background-color:rgba(0,0,0,0.6); }
+#outro:before { content:''; height:0; position:absolute; width:0; border-top:50px solid transparent; border-left:100vw solid rgba(0,0,0,0.6); top:-50px; left:0; }
+#outro:after { content:''; height:0; position:absolute; width:0; border-bottom:50px solid transparent; border-right:100vw solid rgba(0,0,0,0.6); top:100%; left:0; }
+.outro_container { width:100%; margin:auto; text-align:center; color:#fff; }
+.outro_lead { font-size:12px; line-height:1.6; color:#fff; }
+.outro_btn {  margin:20px auto 0; width:180px; }
+.outro_btnLink { padding:12px 0 10px; text-decoration:none; display:block; font-size:16px; color:#fff; border:2px solid #fff; border-radius:30px; background-color:transparent; }
+.outro_note { margin-top:30px; font-size:10px; line-height:1.6; color:#ccc; }
+
+
+
+/* ----------------------------------------
+ * スクロールトップ
+ * ---------------------------------------- */
+#secretTop { position:fixed; bottom:20px; right:20px; z-index:4; background:#fff; width:50px; height:50px; border-radius:25px; border:1px solid #fb377d; box-sizing:border-box; }
+.secretTopLink { display:table; width:100%; height:100%; text-decoration:none; color:#fb377d; font-size:10px; text-align:center; }
+.secretTopLinkContainer { padding-top:5px; display:table-cell; vertical-align:middle; }
+
+
+
+/**
+ * ------------------------------------------------------------
+ * PCデザイン
+ * ------------------------------------------------------------
+ */
+@media screen and (min-width: 768px) {
+	/* ----------------------------------------
+	 * ヒーロー
+	 * ---------------------------------------- */
+	#hero { position:static; padding:100px 0 20px; margin:0 auto 20px; width:1000px; }
+	#hero:after { clear:both; content:""; display:block; }
+	.hero_image { width:460px; padding-top:440px; border-radius:230px; float:left; }
+	.hero_body { float:left; width:540px; height:460px; text-align:center; display:table; }
+	.hero_body:after { top:50%; margin-top:-75px; left:-60px; margin-left:0; }
+	.hero_bodyContainer { display:table-cell; vertical-align:middle; }
+	.hero_ttl { margin:0; font-size:54px; line-height:1.2; letter-spacing:0; text-shadow:4px 2px 0 #fff; word-break:break-all; }
+	.hero_ttl span { font-size:22px; text-shadow:2px 1px 0 #fff; }
+	.hero_client { font-size:24px; margin:30px 0 0; }
+	.hero_visit { margin:30px auto 0; width:260px; }
+	.hero_visitLink { padding:17px 0 15px; font-size:20px;
+		-webkit-transition:color 0.6s,background-color 0.6s,letter-spacing 0.6s,border 0.6s;
+		transition:color 0.6s,background-color 0.6s,letter-spacing 0.6s,border 0.6s;
+	}
+	.hero_visitLink:hover { color:#fb377d; border:2px solid #fb377d; background-color:transparent; letter-spacing:14px; }
+
+
+
+	/* ----------------------------------------
+	 * コンセプト
+	 * ---------------------------------------- */
+	#concept { width:540px; margin:40px auto 0; }
+	.concept_container { margin:0; }
+	.concept_ttl { font-size:40px; line-height:1.6; }
+	.concept_ttl:after { width:2px; bottom:-25px; }
+	.concept_lead { font-size:18px; line-height:1.8; }
+	.concept_lead a { text-decoration:none; position:relative; }
+	.concept_lead a:after { position:absolute; content:""; left:0; bottom:0; width:0; height:1px; background-color:#fb377d; transition:0.4s; }
+	.concept_lead a:hover:after { width:100%; }
+
+
+
+	/* ----------------------------------------
+	 * 画像
+	 * ---------------------------------------- */
+	#image { margin:100px auto 100px; width:700px; }
+	.image_container { margin:0; }
+	.image_item + .image_item { margin-top:60px; }
+	.image_itemText { font-size:18px; }
+	.image_itemImg { box-sizing:border-box; border:5px solid #fff; cursor:pointer; }
+	.image_itemImg img { transition:opacity 0.6s,filter 0.6s;
+		-webkit-transition:opacity 0.6s,filter 0.6s;
+	}
+	.image_itemImg:hover img { opacity:0.9; filter:brightness(110%); }
+
+
+
+	/* ----------------------------------------
+	 * コード
+	 * ---------------------------------------- */
+	#code { margin:100px auto 100px; width:700px; }
+	.code_container { margin:0; }
+	.code_item + .code_item { margin-top:60px; }
+	.code_itemText { font-size:18px; }
+
+
+
+	/* ----------------------------------------
+	 * アウトロ
+	 * ---------------------------------------- */
+	#outro { margin:260px 0 0; padding:40px 30px; }
+	#outro:before { border-top:200px solid transparent; top:-200px; }
+	#outro:after { border-bottom:200px solid transparent; }
+	.outro_container { width:100%; margin:auto; text-align:center; color:#fff; }
+	.outro_lead { font-size:18px; line-height:1.8; }
+	.outro_btn { margin:30px auto 0; width:200px; }
+	.outro_btnLink { padding:17px 0 15px; width:200px; cursor:pointer;
+		-webkit-transition:background-color 0.6s,letter-spacing 0.6s;
+		transition:background-color 0.6s,letter-spacing 0.6s;
+	}
+	.outro_btnLink:hover { background-color:rgba(255,255,255,0.2); letter-spacing:6px; }
+	.outro_note { font-size:12px; }
+
+
+
+	/* ----------------------------------------
+	 * モーダル
+	 * ---------------------------------------- */
+	.showModal { overflow:hidden; position:relative; }
+	.overlay { position:fixed; top:0; left:0; background-color:rgba(0,0,0,0.6); width:100%; height:100%; }
+	.modal { display:none; position:absolute; z-index:8; }
+	.modal_window { overflow-y:scroll; position:fixed; left:0; right:0; top:0; bottom:0; }
+	.modal_container { position:relative; width:1000px; margin:40px auto; padding:20px; background-color:#fff; box-sizing:border-box; }
+	.modal_imageContainer {}
+	.modal_image { width:100%; vertical-align:bottom; }
+	.modal_close { width:40px; height:40px; border:1px solid #fff; border-radius:20px; background-color:#fb377d; box-sizing:border-box; position:absolute; top:-20px; right:-20px; cursor:pointer;
+		-webkit-transition:opacity 0.6s;
+		transition:opacity 0.6s;
+	}
+	.modal_close:hover { opacity:0.8; }
+	.modal_close:before { display:block; content:""; width:1px; height:20px; transform:rotate(-45deg); background-color:#fff; position:absolute; top:50%; left:50%; margin-top:-10px; }
+	.modal_close:after { display:block; content:""; width:1px; height:20px; transform:rotate(45deg); background-color:#fff; position:absolute; top:50%; left:50%; margin-top:-10px; }
+
+
+
+	/* ----------------------------------------
+	 * スクロールトップ
+	 * ---------------------------------------- */
+	#secretTop { position:fixed; bottom:50px; right:50%; margin-right:-550px; }
+	.secretTopLink {
+			-webkit-transition:opacity 0.6s;
+			transition:opacity 0.6s;
+		}
+	.secretTopLink:hover { opacity:0.4; }
+}

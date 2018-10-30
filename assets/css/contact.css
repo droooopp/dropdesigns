@@ -1,0 +1,63 @@
+@charset "UTF-8";
+/*!
+ * D-ROP Designs
+ * https://dropdesigns.tokyo
+ *
+ * 2018.06.01
+ */
+
+
+
+/**
+ * ------------------------------------------------------------
+ * SPデザイン
+ * ------------------------------------------------------------
+ */
+
+
+
+/* ----------------------------------------
+ * 成功
+ * ---------------------------------------- */
+#contactSuccess { margin:0 30px; line-height:1.6; }
+.contact_ttl { margin-top:70px; text-align:center; font-size:30px; line-height:1.6; color:#fb377d; letter-spacing:5px;
+	background:-webkit-linear-gradient(105deg, #dd8467 35%,#fb377d 70%);
+	-webkit-text-fill-color:transparent;
+	-webkit-background-clip:text;
+}
+.contact_body { padding:0 10px; margin:30px 0 0; }
+#contactSuccess .contact_subTtl { text-align:center; padding:10px 10px 8px; border-radius:5px; background-color:#15b19b; color:#fff; }
+.contact_lead { margin-top:30px; font-size:14px; }
+.contact_mail { margin:30px auto 0; font-size:20px; text-align:center; }
+#footer { position:absolute; bottom:0; left:50%; margin-left:-100px; }
+@media screen and (max-width: 374px) {
+	.contact_ttl { margin-top:50px; }
+	.contact_body { padding:0 10px; margin:10px 0 0; }
+	.contact_subTtl { padding:8px 8px 6px; font-size:14px; }
+	.contact_mail { margin:10px auto 0; font-size:18px;}
+}
+
+
+
+/* ----------------------------------------
+ * 失敗
+ * ---------------------------------------- */
+#contactFailed { margin:0 30px; line-height:1.6; }
+#contactFailed .contact_subTtl { text-align:center; padding:10px 10px 8px; border-radius:5px; background-color:#e03232; color:#fff; }
+
+
+
+
+/**
+ * ------------------------------------------------------------
+ * PCデザイン
+ * ------------------------------------------------------------
+ */
+@media screen and (min-width: 768px) {
+
+
+
+	#contactSuccess { margin:0 30px; line-height:1.6; }
+	.contact_ttl { margin-top:140px; font-size:38px; letter-spacing:5px; }
+	.contact_body { width:600px; margin:50px auto 0; }
+}

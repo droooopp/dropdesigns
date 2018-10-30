@@ -1,0 +1,227 @@
+@charset "UTF-8";
+
+/*---------------
+リセット
+---------------*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video{ margin:0; padding:0; border:0; font-size:100%; font:inherit; vertical-align:baseline; }
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section{ display:block; }
+body{ line-height:1; }
+ol, ul{ list-style:none; }
+blockquote, q{ quotes:none; }
+blockquote:before, blockquote:after,
+q:before, q:after{ content:''; content:none; }
+table{ border-collapse:collapse; border-spacing:0; }
+*:focus{ outline:none; }
+
+/*---------------
+共通
+---------------*/
+
+body{ background:#fff; color:#505050; font-family: "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "游明朝", YuMincho, "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif; }
+img{ width:100%; }
+
+/* clearfix */
+.cf{ zoom:1; }
+.cf:after{ content:'.'; display:block; height:0; clear:both; visibility:hidden; }
+
+/* ボタン */
+.itemBtn { padding:0 30px; }
+.itemBtn a{ display:block; background:#336633; width:100%; color:#fff; font-size:11px; letter-spacing:1px; text-decoration:none; padding:20px 0; text-align:center; font-family: "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, メイリオ, sans-serif;
+-webkit-border-radius:25px;
+-moz-border-radius:25px;
+border-radius:25px;
+}
+
+/* フェードイン */
+.fade{ opacity:0; transform:translate(0, 100px); transition:all 1500ms; }
+.fade.scrollin{ opacity:1; transform:translate(0, 0); }
+.fadeFast{ opacity:0; transform:translate(0, 100px); transition:all 1000ms; }
+.fadeFast.scrollinFast{ opacity:1; transform:translate(0, 0); }
+.fadeFastItem{ opacity:0; transform:translate(0, 100px); transition:all 1000ms; }
+.fadeFastItem.scrollinFastItem{ opacity:1; transform:translate(0, 0); }
+.fadeZ{ opacity:0; transform:scale(0.85, 0.85); transition:all 2000ms; }
+.fadeZ.zoomin{ opacity:1; transform:scale(1, 1); }
+
+/* メインビジュアル動画 */
+#mainBg{ position:absolute; top:50%; left:50%; }
+
+
+/*---------------
+コンテンツ
+---------------*/
+/* ローダー */
+.loader{ text-align:center; background:#fff; position:fixed; top:0; left:0; width:100%; height:100%; padding:0; margin:0; z-index:10000; }
+.loader_inner{ width:50px; position:absolute; top:50%; left:50%; margin:-25px 0 0 -25px; }
+.loader_img{ width:50px; margin:0 auto; }
+
+/* メインビジュアル */
+.mainWrap{ position:relative; height:100vh; overflow:hidden; }
+.slideMask{  background:#000; opacity:0.4; position:absolute; top:0; left:0; width:100%; height:100vh; padding:0; margin:0; z-index:20; }
+.mainInner{ display:none; position:absolute; top:50%; left:50%; margin:-193px 0 0 -140px; width:280px; z-index:21; }
+.mainWrap h1{ width:280px; }
+.mainWrap h1 img{ width:100%; }
+.mainMovieOpen{ width:215px; height:39px; margin:0 auto; }
+.main_naviWrap{ text-align:center; width:169px; margin:40px auto 35px; }
+.main_naviWrap li{ margin:0 0 20px 0; }
+.main_btn01 a img{ width:169px; }
+.main_btn02 a img{ width:84px; }
+.main_btn03 a img{ width:35px; }
+.main_btn04 a img{ width:39px; }
+.main_btn_howto a img{ width:49px; }
+.main_btn_shoplist a img{ width:59px; }
+.bx-viewport{ left:0; box-shadow:none!important; border:none!important; top:0; left:0; }
+.bx-wrapper .bx-viewport{ left:0; }
+.mainBg_slider{ position:absolute; top:0; }
+.mainBg_slider li{ height:100vh; background:center / cover no-repeat; }
+
+/* ニュース */
+.conNews { padding:40px 0 0; font-family: "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, メイリオ, sans-serif; }
+.conNews_ttl { width:100%; margin:0 0 15px; }
+.conNews_list { padding:0 15px; }
+.conNews_list li + li { border-top:1px solid #efefef; }
+.conNews_item { padding:15px 0; }
+.conNews_item dt { font-size:10px; font-weight:bold; color:#b3b3b3; display:inline-block; position:relative; }
+.conNews_item-new dt:after { display:block; content:""; width:23px; height:7px; background-image:url(../img/news_newico.png); background-size:contain; position:absolute; right:-30px; top:50%; margin:-3px 0 0 0; }
+.conNews_item dd { font-size:12px; margin-top:8px; line-height:1.4; }
+.conNews_item dd a { text-decoration:underline; color:#1f5f3c; }
+
+/* コンセプト */
+.con01Wrap { padding:20px 0 30px; }
+.con01Wrap p img{ width:100%; }
+
+/* プロダクト */
+.con02Wrap{ padding:0; }
+.con02_img{ width:224px; margin:-225px 0 0 -110px; padding:0; left:50%;
+	-webkit-transform: translate3d(0, 0, 1px);
+	transform: translate3d(0, 0, 1px);
+	position: absolute;
+}
+.con02_txt{ width:100%; margin:100px 0 20px; }
+.productBg_slider{ position:absolute; top:0; height:175px; }
+.productBg_slider li{ height:175px; background:center / cover no-repeat;
+	-webkit-transform: translate3d(0, 0, -1px);
+	transform: translate3d(0, 0, -1px);
+	position: absolute;
+}
+
+/* Howto */
+.howtoWrap{ padding:50px 0 50px; }
+.howto_txt{ margin:0 0 30px; }
+.howtoMovieOpen{ position:relative; }
+/*.howtoMovieImg{ position:absolute; top:0; z-index:2; }*/
+.howtoMovieFrame{ position:absolute; top:0; width:100%; }
+
+/* FAQ */
+.con03Wrap{ background:#fafafa; }
+.faq_slider{ width:100%; margin:0 auto; padding:40px 0 60px; }
+.faq_slider li{ outline: none; }
+.faq_slider .slick-slide{ padding:0 48px; }
+.faq_subttl{ font-size:32px; border-bottom:1px solid #d8d8d8; margin:0 0 25px; line-height:2.0; letter-spacing:3px; display:inline-block; padding:0 0 20px; }
+.faq_link{ margin:20px 0 0; }
+.faq_sublead{ font-size:10px; line-height:1.6!important; letter-spacing:5px; padding:20px 0 0; }
+.faq_slider .slick-slide { margin: 0!important; }
+.faq_slider .slick-prev{ display:block; background:url(../img/slider_arrow_prev.png); width:17px; height:33px; margin:0 0 0 40px; z-index:1; background-size:cover; }
+.faq_slider .slick-next{ display:block; background:url(../img/slider_arrow_next.png); width:17px; height:33px; margin:0 40px 0 0; background-size:cover; }
+.slick-next::before,.slick-prev::before{ content:'';}
+.slick-dots li{ margin:0; width:15px; }
+.faq_slider .slick-dots li button:before{ display:block; background:url(../img/slider_dot.png); width:7px; height:7px; content:''; opacity:1; background-size:cover; }
+.faq_slider .slick-dots li.slick-active button:before{ display:block; background:url(../img/slider_dot_active.png); width:7px; height:7px; content:''; background-size:cover; }
+.slick-dots{ bottom:15px; width:100px; left:50%; margin:0 0 0 -45px; }
+.faq_imgList{ width:100%; margin:0 auto; }
+.faq_imgList li:first-child{ width:142px; float:left; margin:-70px 0 0; }
+.faq_imgList li:last-child{ width:109px; float:right; margin:-40px 0 0; }
+
+/* GALLARY */
+.con04Wrap{ padding:30px 0 25px; }
+.con04_txt{ width:100%; margin:0 0 25px; }
+.gallary_slider{ margin:0 0 30px; }
+.gallary_slider li{ outline:none; padding:0 5px; width:170px; height:170px; }
+.gallary_slider li img{ width:100%; }
+.lb-container img{ width:255px!important; height:255px!important; }
+.lb-dataContainer{ display:block!important; position:relative; }
+.lb-data .lb-close{ width:20px; height:20px; background:url(../img/modal_close.png); background-size:cover; position:absolute; right:0; margin:14px -24px 0 0px; }
+
+/* ショップリスト */
+.conShoplist{ padding:50px 0; font-family: "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, メイリオ, sans-serif; }
+.conShoplist_ttl { width:100%; margin:0 0 15px; }
+.conShoplist_linkList { text-align:center; }
+.conShoplist_linkList li + li { margin-top:10px; }
+.conShoplist_linkList li a { font-size:12px; text-decoration:underline; color:#1f5f3c; }
+
+/* SNS */
+.con05Wrap{ padding:20px 0 25px; }
+.con05_txt{ width:100%; margin:0 0 25px; }
+.con05Wrap ul{ padding:0 30px; }
+.con05Wrap ul li a{ display:block; height:40px; border-radius:25px; margin:0 0 15px 0; padding:0; width:100%; color:#fff; border:1px solid #d3d3d3; }
+.con05Wrap ul li:last-child a{ margin:0; }
+.link_tw a{ background:url(../img/sns_ico01.png) center center no-repeat; background-size:103px; }
+.link_fb a{ background:url(../img/sns_ico02.png) center center no-repeat; background-size:103px; }
+.link_insta a{ background:url(../img/sns_ico03.png) center center no-repeat; background-size:103px; }
+
+/* フッター */
+footer{ width:100%; background:#fafafa; padding:30px 0 20px; }
+.footer_txt{ }
+
+/*---------------
+イベントバナー
+---------------*/
+.eventBnr{ display:none; position:fixed; bottom:10px; right:10px; z-index:10000;
+	-webkit-transform: translate3d(0, 0, 3px);
+	transform: translate3d(0, 0, 3px);
+}
+.eventBnr img{ width:97px; max-width:100%; height:auto; }
+
+/*---------------
+モーダル
+---------------*/
+.modalWrap{ display:none; text-align:center; width:100%; height:100%; position:fixed; top:0; z-index:9999;
+	-webkit-transform: translate3d(0, 0, 3px);
+	transform: translate3d(0, 0, 3px);
+}
+.modalOverlay{ background:#000; opacity:0.7; position:fixed; top:0; left:0; width:100%; height:100%; padding:0; margin:0; z-index:10000; }
+.modalInner{ background:#fff; padding:10px 10px 20px; position:fixed; top:50%; box-sizing:border-box; margin:0 30px; z-index:99999;}
+.modalHero img{ width:305px; max-width:100%; height:auto; }
+.modalBtn{ padding:0 60px; }
+.modalBtn a{ margin:20px 0 0; background:#d3243d; display:block; border:1px solid #d3243d; width:100%; color:#fff; font-size:11px; letter-spacing:1px; text-decoration:none; padding:12px 0 11px; text-align:center; font-family: "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, メイリオ, sans-serif;
+-webkit-border-radius:25px;
+-moz-border-radius:25px;
+border-radius:25px;
+}
+.modalClose{ position:absolute; right:-18px; top:0; }
+.modalClose img{ width:15px; max-width:100%; height:auto; }
+
+/*---------------
+メイン動画モーダル
+---------------*/
+.mainMovieModalWrap{ display:none; text-align:center; width:100%; height:100%; position:fixed; top:0; z-index:9999;
+  -webkit-transform: translate3d(0, 0, 3px);
+  transform: translate3d(0, 0, 3px);
+}
+.mainMovieFrameWrap{ z-index:9999; position:fixed; top:50%; left:50%; z-index:99999;
+	ms-box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.5);
+	box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.5);
+}
+.mainMovieFrame{ width:100%; height:100%; }
+
+
+/*---------------
+レスポンシブ
+---------------*/
+@media (max-width:374px) {
+
+}

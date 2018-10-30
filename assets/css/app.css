@@ -1,0 +1,403 @@
+/*!
+ * D-ROP Designs
+ * https://dropdesigns.tokyo
+ *
+ * 2018.06.01
+ */
+
+
+
+@charset "UTF-8";
+/**
+ * ------------------------------------------------------------
+ * リセットCSS
+ * ------------------------------------------------------------
+ */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, l, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+button, input, select, textarea {
+	font-family : inherit;
+	font-size : 100%;
+}
+
+
+
+/**
+ * ------------------------------------------------------------
+ * SPデザイン
+ * ------------------------------------------------------------
+ */
+/* ----------------------------------------
+ * 共通
+ * ---------------------------------------- */
+body { font-family:'Josefin Sans','Noto Sans Japanese',sans-serif; width:100%; background:#fff; overflow-x:hidden; color:#1d1d1d; font-feature-settings:"palt"; }
+.showNav { width:100%; min-height:100%; overflow:hidden; }
+
+
+
+/* ----------------------------------------
+ * フッター
+ * ---------------------------------------- */
+#footer { overflow:hidden;  text-align:center;}
+.footer_container { margin:0 auto; padding:40px 0 0; width:200px; height:200px; border-radius:140px; background:linear-gradient(90deg, #dd8467, #fb377d); z-index:2; position:relative; margin-bottom:-160px; margin-top:60px; }
+.footer_text { text-align:center; font-size:12px; }
+
+
+
+
+/* ----------------------------------------
+ * メニューと枠
+ * ---------------------------------------- */
+
+/* ハンバーガーメニュー -------------------- */
+.menuIco{ position:fixed; top:-75px; right:-75px; width:150px; height:150px; border-radius:75px; background:linear-gradient(90deg, #dd8467, #fb377d); z-index:4;
+	-webkit-transition:top 0.6s,right 0.6s,width 0.6s,height 0.6s,border-radius 0.6s,opacity 0.6s;
+	transition:top 0.6s,right 0.6s,width 0.6s,height 0.6s,border-radius 0.6s,opacity 0.6s;
+}
+.menuIco.menuIco-current { top:0; right:0; width:120vw; height:120vh; border-radius:0; opacity:0.95; }
+.menuIco_hamburger { display:block; width:100%; height:100%; position:relative; z-index:5; }
+.menuIco_hamburgerContent { display:block; position:absolute; width:20px; height:2px; background-color:#1d1d1d; margin:34px 26px 0 0; top:50%; right:50%; }
+.menuIco_hamburgerContent:before { position:absolute; top:-8px; display:block; content:""; width:20px; height:2px; background-color:#1d1d1d; }
+.menuIco_hamburgerContent:after { position:absolute; top:8px; display:block; content:""; width:20px; height:2px; background-color:#1d1d1d; }
+
+/* メニュークローズ -------------------- */
+.menuIco_close { display:none; position:absolute; width:60px; height:60px; top:10px; right:10px; z-index:5; }
+.menuIco_closeContainer { display:block; position:absolute; width:20px; height:2px; background-color:transparent; margin:30px 20px; top:0; right:0; }
+.menuIco_closeContainer:before { position:absolute; top:0; display:block; content:""; width:20px; height:2px; background-color:#1d1d1d; all:rotate(-45deg); transform:rotate(-45deg); }
+.menuIco_closeContainer:after { position:absolute; top:0; display:block; content:""; width:20px; height:2px; background-color:#1d1d1d; all:rotate(45deg); transform:rotate(45deg); }
+
+/* ナビゲーション -------------------- */
+.nav_container { position:fixed; left:50%; top:50%; margin:-150px 0 0 -65px; z-index:4; display:none; opacity:0; }
+.nav_list { margin:auto; }
+.nav_item { display:block; width:100%; }
+.nav_item + .nav_item { margin-top:20px; }
+.nav_itemLink { display:block; letter-spacing:4px; text-align:center; color:#333; text-decoration:none; font-size:20px; }
+
+/* メニューの枠 -------------------- */
+.border_container { text-align:center; font-size:12px; letter-spacing:12px; }
+.border_top { display:block; position:fixed; top:0; left:0; width:100vw; height:15px; background-color:#fff; z-index:6;
+	-webkit-transition:height 0.8s;
+	transition:height 0.8s;
+}
+.border_top.border_loading { height:100vh; }
+.border_left { display:block; position:fixed; top:0; left:0; width:15px; height:100vh; background-color:#fff; z-index:4; }
+.border_right { display:block; position:fixed; top:0; right:0; width:15px; height:100vh; background-color:#fff; z-index:4; }
+.border_bottom { display:block; position:fixed; bottom:0; width:100vw; height:15px; background-color:#fff; z-index:4; }
+
+/* 枠内のテキスト -------------------- */
+.border_text-hide .border_textContainer { display:none; }
+.border_textContainer { position:relative; display:block; width:100%; height:100%; }
+.border_text{ color:#bbb; position:relative; line-height:16px; }
+.border_top .border_textContainer { top:9px; }
+.border_left .border_textContainer { left:9px; }
+.border_right .border_textContainer { right:9px; }
+.border_left .border_text{ transform:rotate(90deg); width:300px; height:300px; top:50%; margin-top:-150px; margin-left:-287px; }
+.border_right .border_text{ transform:rotate(270deg); width:300px; height:300px; top:50%; margin-top:-150px; }
+
+/* 枠内のテキストグリッチ -------------------- */
+.border_text-green { display:block; width:100%; height:100%; content:''; position:absolute; left:-2px; text-shadow:-1px 0 #00fd52; top:0; color:#bbb;  background:transparent; overflow:hidden; /*clip:rect(48px, 500px, 56px, 0);
+	-webkit-animation: webkit-glitch-green 5s infinite linear alternate-reverse;
+	-moz-animation: moz-glitch-green 5s infinite linear alternate-reverse;
+	-o-animation: o-glitch-green 5s infinite linear alternate-reverse;
+	animation:glitch-green 5s infinite linear alternate-reverse;*/
+}
+.border_text-pink { display:block; width:100%; height:100%; content:''; position:absolute; left:-1px; text-shadow:-1px 0 #fb377d; top:0; color:#bbb;  background:transparent; overflow:hidden; /*clip:rect(62px, 500px, 54px, 0);
+	-webkit-animation: webkit-glitch-pink 3s infinite linear alternate-reverse;
+	-moz-animation: moz-glitch-pink 3s infinite linear alternate-reverse;
+	-o-animation: o-glitch-pink 3s infinite linear alternate-reverse;
+	animation:glitch-pink 3s infinite linear alternate-reverse;*/
+}
+/*.border_top .border_text:before { content:'あなたの音楽を世界へ。'; }
+.border_top .border_text:after { content:'あなたの音楽を世界へ。'; }
+.border_left .border_text:before { content:'D-ROP Designs'; }
+.border_left .border_text:after { content:'D-ROP Designs'; }
+.border_right .border_text:before { content:'Takayuki Suzuki'; }
+.border_right .border_text:after { content:'Takayuki Suzuki'; }*/
+
+/* アニメーションキーフレーム -------------------- */
+/*@keyframes glitch-pink {
+	0% { clip:rect(89px, 9999px, 95px, 0); }
+	5% { clip:rect(58px, 9999px, 98px, 0); }
+	10% { clip:rect(96px, 9999px, 92px, 0); }
+	15% { clip:rect(58px, 9999px, 65px, 0); }
+	20% { clip:rect(69px, 9999px, 7px, 0); }
+	25% { clip:rect(8px, 9999px, 3px, 0); }
+	30% { clip:rect(8px, 9999px, 76px, 0); }
+	35% { clip:rect(43px, 9999px, 25px, 0); }
+	40% { clip:rect(55px, 9999px, 67px, 0); }
+	45% { clip:rect(57px, 9999px, 59px, 0); }
+	50% { clip:rect(85px, 9999px, 14px, 0); }
+	55% { clip:rect(2px, 9999px, 42px, 0); }
+	60% { clip:rect(89px, 9999px, 98px, 0); }
+	65% { clip:rect(47px, 9999px, 6px, 0); }
+	70% { clip:rect(57px, 9999px, 20px, 0); }
+	75% { clip:rect(71px, 9999px, 39px, 0); }
+	80% { clip:rect(99px, 9999px, 19px, 0); }
+	85% { clip:rect(73px, 9999px, 66px, 0); }
+	90% { clip:rect(23px, 9999px, 75px, 0); }
+	95% { clip:rect(1px, 9999px, 56px, 0); }
+	100% { clip:rect(26px, 9999px, 96px, 0); }
+}
+@-webkit-keyframes webkit-glitch-pink {
+	0% { -webkit-clip:rect(89px, 9999px, 95px, 0); }
+	5% { -webkit-clip:rect(58px, 9999px, 98px, 0); }
+	10% { -webkit-clip:rect(96px, 9999px, 92px, 0); }
+	15% { -webkit-clip:rect(58px, 9999px, 65px, 0); }
+	20% { -webkit-clip:rect(69px, 9999px, 7px, 0); }
+	25% { -webkit-clip:rect(8px, 9999px, 3px, 0); }
+	30% { -webkit-clip:rect(8px, 9999px, 76px, 0); }
+	35% { -webkit-clip:rect(43px, 9999px, 25px, 0); }
+	40% { -webkit-clip:rect(55px, 9999px, 67px, 0); }
+	45% { -webkit-clip:rect(57px, 9999px, 59px, 0); }
+	50% { -webkit-clip:rect(85px, 9999px, 14px, 0); }
+	55% { -webkit-clip:rect(2px, 9999px, 42px, 0); }
+	60% { -webkit-clip:rect(89px, 9999px, 98px, 0); }
+	65% { -webkit-clip:rect(47px, 9999px, 6px, 0); }
+	70% { -webkit-clip:rect(57px, 9999px, 20px, 0); }
+	75% { -webkit-clip:rect(71px, 9999px, 39px, 0); }
+	80% { -webkit-clip:rect(99px, 9999px, 19px, 0); }
+	85% { -webkit-clip:rect(73px, 9999px, 66px, 0); }
+	90% { -webkit-clip:rect(23px, 9999px, 75px, 0); }
+	95% { -webkit-clip:rect(1px, 9999px, 56px, 0); }
+	100% { -webkit-clip:rect(26px, 9999px, 96px, 0); }
+}
+@-moz-keyframes moz-glitch-pink {
+	0% { -moz-clip:rect(89px, 9999px, 95px, 0); }
+	5% { -moz-clip:rect(58px, 9999px, 98px, 0); }
+	10% { -moz-clip:rect(96px, 9999px, 92px, 0); }
+	15% { -moz-clip:rect(58px, 9999px, 65px, 0); }
+	20% { -moz-clip:rect(69px, 9999px, 7px, 0); }
+	25% { -moz-clip:rect(8px, 9999px, 3px, 0); }
+	30% { -moz-clip:rect(8px, 9999px, 76px, 0); }
+	35% { -moz-clip:rect(43px, 9999px, 25px, 0); }
+	40% { -moz-clip:rect(55px, 9999px, 67px, 0); }
+	45% { -moz-clip:rect(57px, 9999px, 59px, 0); }
+	50% { -moz-clip:rect(85px, 9999px, 14px, 0); }
+	55% { -moz-clip:rect(2px, 9999px, 42px, 0); }
+	60% { -moz-clip:rect(89px, 9999px, 98px, 0); }
+	65% { -moz-clip:rect(47px, 9999px, 6px, 0); }
+	70% { -moz-clip:rect(57px, 9999px, 20px, 0); }
+	75% { -moz-clip:rect(71px, 9999px, 39px, 0); }
+	80% { -moz-clip:rect(99px, 9999px, 19px, 0); }
+	85% { -moz-clip:rect(73px, 9999px, 66px, 0); }
+	90% { -moz-clip:rect(23px, 9999px, 75px, 0); }
+	95% { -moz-clip:rect(1px, 9999px, 56px, 0); }
+	100% { -moz-clip:rect(26px, 9999px, 96px, 0); }
+}
+@-o-keyframes o-glitch-pink {
+	0% { -o-clip:rect(89px, 9999px, 95px, 0); }
+	5% { -o-clip:rect(58px, 9999px, 98px, 0); }
+	10% { -o-clip:rect(96px, 9999px, 92px, 0); }
+	15% { -o-clip:rect(58px, 9999px, 65px, 0); }
+	20% { -o-clip:rect(69px, 9999px, 7px, 0); }
+	25% { -o-clip:rect(8px, 9999px, 3px, 0); }
+	30% { -o-clip:rect(8px, 9999px, 76px, 0); }
+	35% { -o-clip:rect(43px, 9999px, 25px, 0); }
+	40% { -o-clip:rect(55px, 9999px, 67px, 0); }
+	45% { -o-clip:rect(57px, 9999px, 59px, 0); }
+	50% { -o-clip:rect(85px, 9999px, 14px, 0); }
+	55% { -o-clip:rect(2px, 9999px, 42px, 0); }
+	60% { -o-clip:rect(89px, 9999px, 98px, 0); }
+	65% { -o-clip:rect(47px, 9999px, 6px, 0); }
+	70% { -o-clip:rect(57px, 9999px, 20px, 0); }
+	75% { -o-clip:rect(71px, 9999px, 39px, 0); }
+	80% { -o-clip:rect(99px, 9999px, 19px, 0); }
+	85% { -o-clip:rect(73px, 9999px, 66px, 0); }
+	90% { -o-clip:rect(23px, 9999px, 75px, 0); }
+	95% { -o-clip:rect(1px, 9999px, 56px, 0); }
+	100% { -o-clip:rect(26px, 9999px, 96px, 0); }
+}
+
+@keyframes glitch-green {
+	0% { clip:rect(37px, 9999px, 16px, 0); }
+	5% { clip:rect(42px, 9999px, 39px, 0); }
+	10% { clip:rect(74px, 9999px, 32px, 0); }
+	15% { clip:rect(25px, 9999px, 60px, 0); }
+	20% { clip:rect(74px, 9999px, 94px, 0); }
+	25% { clip:rect(6px, 9999px, 12px, 0); }
+	30% { clip:rect(70px, 9999px, 13px, 0); }
+	35% { clip:rect(21px, 9999px, 19px, 0); }
+	40% { clip:rect(85px, 9999px, 70px, 0); }
+	45% { clip:rect(38px, 9999px, 26px, 0); }
+	50% { clip:rect(37px, 9999px, 51px, 0); }
+	55% { clip:rect(60px, 9999px, 1px, 0); }
+	60% { clip:rect(86px, 9999px, 17px, 0); }
+	65% { clip:rect(27px, 9999px, 16px, 0); }
+	70% { clip:rect(51px, 9999px, 60px, 0); }
+	75% { clip:rect(9px, 9999px, 29px, 0); }
+	80% { clip:rect(22px, 9999px, 41px, 0); }
+	85% { clip:rect(2px, 9999px, 82px, 0); }
+	90% { clip:rect(75px, 9999px, 18px, 0); }
+	95% { clip:rect(48px, 9999px, 25px, 0); }
+	100% { clip:rect(73px, 9999px, 98px, 0); }
+}
+@-webkit-keyframes webkit-glitch-green {
+	0% { -webkit-clip:rect(37px, 9999px, 16px, 0); }
+	5% { -webkit-clip:rect(42px, 9999px, 39px, 0); }
+	10% { -webkit-clip:rect(74px, 9999px, 32px, 0); }
+	15% { -webkit-clip:rect(25px, 9999px, 60px, 0); }
+	20% { -webkit-clip:rect(74px, 9999px, 94px, 0); }
+	25% { -webkit-clip:rect(6px, 9999px, 12px, 0); }
+	30% { -webkit-clip:rect(70px, 9999px, 13px, 0); }
+	35% { -webkit-clip:rect(21px, 9999px, 19px, 0); }
+	40% { -webkit-clip:rect(85px, 9999px, 70px, 0); }
+	45% { -webkit-clip:rect(38px, 9999px, 26px, 0); }
+	50% { -webkit-clip:rect(37px, 9999px, 51px, 0); }
+	55% { -webkit-clip:rect(60px, 9999px, 1px, 0); }
+	60% { -webkit-clip:rect(86px, 9999px, 17px, 0); }
+	65% { -webkit-clip:rect(27px, 9999px, 16px, 0); }
+	70% { -webkit-clip:rect(51px, 9999px, 60px, 0); }
+	75% { -webkit-clip:rect(9px, 9999px, 29px, 0); }
+	80% { -webkit-clip:rect(22px, 9999px, 41px, 0); }
+	85% { -webkit-clip:rect(2px, 9999px, 82px, 0); }
+	90% { -webkit-clip:rect(75px, 9999px, 18px, 0); }
+	95% { -webkit-clip:rect(48px, 9999px, 25px, 0); }
+	100% { -webkit-clip:rect(73px, 9999px, 98px, 0); }
+}
+@-moz-keyframes moz-glitch-green {
+	0% { -moz-clip:rect(37px, 9999px, 16px, 0); }
+	5% { -moz-clip:rect(42px, 9999px, 39px, 0); }
+	10% { -moz-clip:rect(74px, 9999px, 32px, 0); }
+	15% { -moz-clip:rect(25px, 9999px, 60px, 0); }
+	20% { -moz-clip:rect(74px, 9999px, 94px, 0); }
+	25% { -moz-clip:rect(6px, 9999px, 12px, 0); }
+	30% { -moz-clip:rect(70px, 9999px, 13px, 0); }
+	35% { -moz-clip:rect(21px, 9999px, 19px, 0); }
+	40% { -moz-clip:rect(85px, 9999px, 70px, 0); }
+	45% { -moz-clip:rect(38px, 9999px, 26px, 0); }
+	50% { -moz-clip:rect(37px, 9999px, 51px, 0); }
+	55% { -moz-clip:rect(60px, 9999px, 1px, 0); }
+	60% { -moz-clip:rect(86px, 9999px, 17px, 0); }
+	65% { -moz-clip:rect(27px, 9999px, 16px, 0); }
+	70% { -moz-clip:rect(51px, 9999px, 60px, 0); }
+	75% { -moz-clip:rect(9px, 9999px, 29px, 0); }
+	80% { -moz-clip:rect(22px, 9999px, 41px, 0); }
+	85% { -moz-clip:rect(2px, 9999px, 82px, 0); }
+	90% { -moz-clip:rect(75px, 9999px, 18px, 0); }
+	95% { -moz-clip:rect(48px, 9999px, 25px, 0); }
+	100% { -moz-clip:rect(73px, 9999px, 98px, 0); }
+}
+@-o-keyframes o-glitch-green {
+	0% { -o-clip:rect(37px, 9999px, 16px, 0); }
+	5% { -o-clip:rect(42px, 9999px, 39px, 0); }
+	10% { -o-clip:rect(74px, 9999px, 32px, 0); }
+	15% { -o-clip:rect(25px, 9999px, 60px, 0); }
+	20% { -o-clip:rect(74px, 9999px, 94px, 0); }
+	25% { -o-clip:rect(6px, 9999px, 12px, 0); }
+	30% { -o-clip:rect(70px, 9999px, 13px, 0); }
+	35% { -o-clip:rect(21px, 9999px, 19px, 0); }
+	40% { -o-clip:rect(85px, 9999px, 70px, 0); }
+	45% { -o-clip:rect(38px, 9999px, 26px, 0); }
+	50% { -o-clip:rect(37px, 9999px, 51px, 0); }
+	55% { -o-clip:rect(60px, 9999px, 1px, 0); }
+	60% { -o-clip:rect(86px, 9999px, 17px, 0); }
+	65% { -o-clip:rect(27px, 9999px, 16px, 0); }
+	70% { -o-clip:rect(51px, 9999px, 60px, 0); }
+	75% { -o-clip:rect(9px, 9999px, 29px, 0); }
+	80% { -o-clip:rect(22px, 9999px, 41px, 0); }
+	85% { -o-clip:rect(2px, 9999px, 82px, 0); }
+	90% { -o-clip:rect(75px, 9999px, 18px, 0); }
+	95% { -o-clip:rect(48px, 9999px, 25px, 0); }
+	100% { -o-clip:rect(73px, 9999px, 98px, 0); }
+}*/
+
+
+
+/* ----------------------------------------
+ * 背景パララックス
+ * ---------------------------------------- */
+.bg_grid { background: repeat top center; display:block; position:fixed; top:0; left:0; width:100vw; height:100vh; content:""; z-index:-1; background:linear-gradient(90deg,transparent 39px,#d6d6d6 1%) 50%,linear-gradient(transparent 39px,#d6d6d6 1%) 50%,rgba(0,0,0,0); background-size:40px 40px; }
+.bg_dot { background: repeat top center; display:block; position:fixed; top:1px; left:1px; width:100vw; height:100vh; content:""; z-index:-2; background:linear-gradient(90deg,#dcdcdc 37px,transparent 1%) 50%,linear-gradient(#dcdcdc 37px,transparent 1%) 50%,rgba(0,0,0,.3); background-size:40px 40px; }
+
+
+
+/**
+ * ------------------------------------------------------------
+ * PCデザイン
+ * ------------------------------------------------------------
+ */
+@media screen and (min-width: 768px) {
+
+
+
+	/* ----------------------------------------
+	 * フッター
+	 * ---------------------------------------- */
+	#footer { margin-top:160px; }
+	.footer_container { bottom:0;	margin-bottom: -120px; }
+	.footer_text { font-size:12px; }
+
+
+
+	/* ----------------------------------------
+	 * メニュー
+	 * ---------------------------------------- */
+
+	/* ハンバーガーメニュー -------------------- */
+	.menuIco{ display:none; }
+
+	/* ナビゲーション -------------------- */
+	.nav_container { position:fixed; width:1000px; top:inherit; bottom:0; margin:0 0 0 -500px; z-index:5; display:block; opacity:1; }
+	.nav_list { display:flex; justify-content: space-between; }
+	.nav_item { display:inline-block; position:relative; }
+	.nav_item:before { content:''; width:0; height:0; display:block; border-style:solid; border-width:0 30px 30px 30px; border-color:transparent transparent #ffffff transparent; position:absolute; top:-30px; left:50%; margin-left:-30px; }
+	.nav_item + .nav_item { margin-top:0; margin-left:20px; }
+	.nav_itemLink { letter-spacing:0; color:#fb377d; font-size:15px; padding:10px 0; position:relative;
+		background:-webkit-linear-gradient(35deg, #dd8467 35%,#fb377d 70%);
+		-webkit-text-fill-color:transparent;
+		-webkit-background-clip:text;
+		-webkit-transition:letter-spacing 0.6s;
+		transition:letter-spacing 0.6s;
+	}
+	.nav_itemLink:before { content:""; position:absolute; bottom:8px; left:50%; height:1px; width:0; background-color:#fb377d;
+		-webkit-transition:width 0.6s;
+		transition:width 0.6s;
+	}
+	.nav_itemLink:after { content:""; position:absolute; bottom:8px; right:50%; height:1px; width:0; background-color:#fb377d;
+		-webkit-transition:width 0.6s;
+		transition:width 0.6s;
+	}
+	.nav_itemLink:hover { letter-spacing:4px; }
+	.nav_itemLink:hover:before { width:50%; }
+	.nav_itemLink:hover:after { width:50%; }
+
+	/* メニューの枠 -------------------- */
+	.border_top { height:40px; background-color:#fff; }
+	.border_left { width:40px; background-color:#fff; }
+	.border_right { width:40px; background-color:#fff; }
+	.border_bottom { height:40px; background-color:#fff; }
+
+	/* 枠内のテキスト -------------------- */
+	.border_text{ color:#bbb; line-height:22px; font-size:20px; }
+	.border_top .border_textContainer { top:30px; }
+	.border_left .border_textContainer { left:30px; }
+	.border_right .border_textContainer { right:10px; }
+	.border_left .border_text{ width:500px; height:500px; margin-top:-250px; margin-left:-480px; }
+	.border_right .border_text{ width:500px; height:500px; margin-top:-250px; }
+}

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #f5c162;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="シェイプ_4" data-name="シェイプ 4" class="cls-1" d="M0.989,6v4H7.948v4l8.063-6L7.948,2V6H0.989Z"/>
+</svg>
