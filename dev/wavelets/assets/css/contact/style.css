@@ -1,0 +1,48 @@
+/*!
+ * Credit: Wavelets
+ * Developer: Takayuki Suzuki
+ * Site: http://wavelets.jp/
+ * Create: 2018.XX.XX
+ * Modified: 2018.XX.XX
+ * Memo:  [2018.XX.XX]
+ *
+ */
+
+
+
+
+/**
+ * ------------------------------------------------------------
+ * override
+ * ------------------------------------------------------------
+ */
+.body { opacity:1; }
+.footer { position:absolute; bottom:0; }
+
+
+/**
+ * ------------------------------------------------------------
+ * contactResult
+ * ------------------------------------------------------------
+ */
+.contactResult_body { margin:50px 30px 0; }
+.contactResult_ttl { font-size:16px; text-align:center; }
+.contactResult_lead { margin-top:50px; text-align:left; font-size:13px; line-height:1.6; }
+
+
+
+/**
+ * ------------------------------------------------------------------------------------------------------------------------
+ * PC用レイアウト
+ * ------------------------------------------------------------------------------------------------------------------------
+ */
+@media screen and (min-width: 768px) {
+	/**
+	 * ------------------------------------------------------------
+	 * contactResult
+	 * ------------------------------------------------------------
+	 */
+	.contactResult_body { padding:50px; width:600px; margin:100px auto 0; background-color:rgba(0,0,0,0.7); }
+	.contactResult_ttl { font-size:22px; }
+	.contactResult_lead { margin-top:50px; font-size:16px; line-height:1.6; }
+}
