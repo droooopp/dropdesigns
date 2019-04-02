@@ -47,5 +47,5 @@ button, input, select, textarea {
 /* ----------------------------------------
  * 共通
  * ---------------------------------------- */
-body { font-family:'Cardo', 'Hannari','Noto Sans Japanese',sans-serif; width:100%; background:#fff; overflow-x:hidden; color:#1d1d1d; font-feature-settings:"palt"; }
+body { font-family:'Cardo', 'Sawarabi Mincho', sans-serif; width:100%; background:#fff; overflow-x:hidden; color:#1d1d1d; font-feature-settings:"palt"; }
 .showNav { width:100%; min-height:100%; overflow:hidden; }
