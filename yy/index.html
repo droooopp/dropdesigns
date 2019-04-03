@@ -21,10 +21,51 @@
   <link href="css/app.css" rel="stylesheet" type="text/css">
   <link href="css/style.css" rel="stylesheet" type="text/css">
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="js/jquery.ripples-min.js"></script>
   <script src="js/granim.min.js"></script>
   <script src="js/index.js"></script>
   </head>
 <body>
+  <header class="header">
+    <div class="header-container">
+      <div class="header-ttl-container">
+        <div class="header-ttl">
+          <a href="#" class="header-ttlLink">
+            <img src="" alt="">
+          </a>
+        </div>
+        <p class="header-action">
+          <!-- <span class="header-menu">MENU</span> -->
+          <span class="header-ico"></span>
+        </p>
+      </div>
+      <nav class="header-nav">
+        <ul class="header-navList">
+          <li class="header-navItem">
+            <a href="" class="header-navLink">
+              Top
+            </a>
+          </li>
+          <li class="header-navItem">
+            <a href="" class="header-navLink">
+              Gallery
+            </a>
+          </li>
+          <li class="header-navItem">
+            <a href="" class="header-navLink">
+              Profile
+            </a>
+          </li>
+          <li class="header-navItem">
+            <a href="" class="header-navLink">
+              Contact
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="header-overlay"></div>
+  </header>
   <section class="hero">
     <canvas id="canvas"></canvas>
     <div class="hero-container">
@@ -32,7 +73,8 @@
         Yuka Sakayori Portfolio
       </h1>
       <div class="hero-circle">
-        <img src="img/hero.jpg" alt="">
+        <div class="hero-koi"></div>
+        <!-- <img src="img/koi.png" alt="" class="hero-koi"> -->
       </div>
     </div>
   </section>
