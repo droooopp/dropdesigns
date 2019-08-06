@@ -169,12 +169,14 @@
 .contact_input { width:100%; padding:10px 0; border:none; height:20px; background-color:rgba(255,255,255,0.2); color:#fff; font-size:14px; border-radius:0; }
 .contact_textAreaContainer .contact_input { height:160px; }
 .contact_button { padding:12px 0 10px; width:180px; text-align:center; display:block; margin:30px auto 0; font-size:16px; color:#fff; border:2px solid #fff; border-radius:30px; background-color:transparent; }
+.contact_button:disabled { opacity:0.1; }
 .contact_input::-webkit-input-placeholder,
 .contact_textArea::-webkit-input-placeholder { color:#fff; padding-left:10px; }
 .contact_input:-ms-input-placeholder,
 .contact_textArea::-webkit-input-placeholder { color:#fff; padding-left:10px; }
 .contact_input::-moz-placeholder,
 .contact_textArea::-webkit-input-placeholder { color:#fff; padding-left:10px; }
+.contact_recaptchaContainer { width:300px; margin:20px auto 0; text-align:center; }
 
 
 
@@ -293,7 +295,9 @@
 		-webkit-transition:background-color 0.6s;
 		transition:background-color 0.6s;
 	}
+	.contact_button:disabled { cursor:default; }
 	.contact_button:hover { background-color:rgba(255,255,255,0.2); }
+	.contact_button:disabled:hover { background-color:rgba(255,255,255,0);}
 
 
 

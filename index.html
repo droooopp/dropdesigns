@@ -19,6 +19,7 @@
 	<link href="//fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet">
 	<link href="/assets/css/app.css" rel="stylesheet" type="text/css">
 	<link href="/assets/css/style.css" rel="stylesheet" type="text/css">
+	<script src="//www.google.com/recaptcha/api.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="/assets/js/three.js"></script>
 	<script src="/assets/js/loading.js"></script>
@@ -350,18 +351,21 @@
 		<div class="contact_container">
 			<div class="contact_actionInner">
 				<form role="form" action="assets/php/mail.php" method="post">
-					<p class="contact_inputContainer">
+					<div class="contact_inputContainer">
 						<input type="text" name="name" value="" size="40" class="contact_input" aria-required="true" aria-invalid="false" placeholder="NAME" required="">
-					</p>
-					<p class="contact_inputContainer">
+					</div>
+					<div class="contact_inputContainer">
 						<input type="text" name="email" value="" size="40" class="contact_input" aria-required="true" aria-invalid="false" placeholder="E-MAIL" required="">
-					</p>
-					<p class="contact_textAreaContainer">
+					</div>
+					<div class="contact_textAreaContainer">
 						<textarea name="message" rows="8" cols="40" class="contact_input" placeholder="MESSAGE" required=""></textarea>
-					</p>
-					<p class="contact_btnContainer">
-						<button type="submit" class="contact_button">SUBMIT</button>
-					</p>
+					</div>
+					<div class="contact_recaptchaContainer">
+						<div class="g-recaptcha" data-callback="clearcall" data-sitekey="6LcafrEUAAAAALd73CuPw2YxrqqP4evyfA705_Br"></div>
+					</div>
+					<div class="contact_btnContainer">
+						<button type="submit" class="contact_button" disabled>SUBMIT</button>
+					</div>
 				</form>
 			</div>
 		</div>
@@ -444,5 +448,13 @@
 	</footer>
 	<script src="/assets/js/app.js"></script>
 	<script src="/assets/js/index.js"></script>
+	<script>
+		function clearcall(code) {
+			if(code !== ""){
+				$('.contact_button')
+					.prop('disabled', false);
+			}
+		}
+	</script>
 </body>
 </html>
