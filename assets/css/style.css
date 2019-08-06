@@ -176,7 +176,8 @@
 .contact_textArea::-webkit-input-placeholder { color:#fff; padding-left:10px; }
 .contact_input::-moz-placeholder,
 .contact_textArea::-webkit-input-placeholder { color:#fff; padding-left:10px; }
-.contact_recaptchaContainer { width:300px; margin:20px auto 0; text-align:center; }
+.contact_recaptchaContainer { width:240px; margin:20px auto 0; text-align:center; }
+.g-recaptcha { transform:scale(0.8); transform-origin:0 0; }
 
 
 

@@ -361,7 +361,7 @@
 						<textarea name="message" rows="8" cols="40" class="contact_input" placeholder="MESSAGE" required=""></textarea>
 					</div>
 					<div class="contact_recaptchaContainer">
-						<div class="g-recaptcha" data-callback="clearcall" data-sitekey="6LcafrEUAAAAALd73CuPw2YxrqqP4evyfA705_Br"></div>
+						<div class="g-recaptcha" data-callback="clearcall" data-expired-callback="expiredCallback" data-theme="dark" data-sitekey="6LcafrEUAAAAALd73CuPw2YxrqqP4evyfA705_Br"></div>
 					</div>
 					<div class="contact_btnContainer">
 						<button type="submit" class="contact_button" disabled>SUBMIT</button>
@@ -454,6 +454,10 @@
 				$('.contact_button')
 					.prop('disabled', false);
 			}
+		}
+		function expiredCallback() {
+			$('.contact_button')
+				.prop('disabled', true);
 		}
 	</script>
 </body>
