@@ -135,7 +135,7 @@
 
 .works_itemImageMask { position:absolute; top:0; right:0; bottom:0; left:0; width:100%; height:auto; background:#111; z-index:1; }
 .works_itemImage img { margin:auto; padding:10px; position:absolute; top:0; bottom:0; left:0; right:0; width:100%; height:auto; box-sizing:border-box; }
-.works_itemCircle { margin:-120px auto 0; padding:20px; width:200px; height:200px; border-radius:140px; background:linear-gradient(90deg, #dd8467, #fb377d); z-index:2; position:relative; display:table; right:-200vw;
+.works_itemCircle { margin:-120px auto 0; padding:20px; width:240px; height:240px; border-radius:140px; background:linear-gradient(90deg, #dd8467, #fb377d); z-index:2; position:relative; display:table; right:-200vw;
 	-webkit-transition:left 1s,right 1s;
 	transition:left 1s,right 1s;
 }
@@ -166,7 +166,7 @@
 .contact_actionInner { margin-top:20px; }
 .contact_inputContainer + .contact_inputContainer { margin-top:10px; }
 .contact_inputContainer + .contact_textAreaContainer { margin-top:10px; }
-.contact_input { width:100%; padding:10px 0; border:none; height:20px; background-color:rgba(255,255,255,0.2); color:#fff; font-size:14px; border-radius:0; }
+.contact_input { width:100%; padding:10px 0; border:none; height:50px; background-color:rgba(255,255,255,0.2); color:#fff; font-size:14px; border-radius:0; }
 .contact_textAreaContainer .contact_input { height:160px; }
 .contact_button { padding:12px 0 10px; width:180px; text-align:center; display:block; margin:30px auto 0; font-size:16px; color:#fff; border:2px solid #fff; border-radius:30px; background-color:transparent; }
 .contact_button:disabled { opacity:0.1; }
@@ -258,10 +258,10 @@
 	.works_item { width:400px; margin:30px 0 0; }
 	.works_item + .works_item { margin-top:100px; }
 	.works_item:nth-child(odd) { position:relative; left:-200px; }
-	.works_item:nth-child(odd) .works_itemCircle { position:relative; margin:-370px 0 0 380px; }
-	.works_item:nth-child(odd) .works_itemCircle:before { position:absolute; top:50%; left:0; content:''; display:block; width:100vw; height:2px; background:linear-gradient(90deg, #dd8467, #fb377d); margin-top:-1px; margin-left:340px; }
+	.works_item:nth-child(odd) .works_itemCircle { position:relative; margin:-350px 0 0 400px; }
+	.works_item:nth-child(odd) .works_itemCircle:before { position:absolute; top:50%; left:0; content:''; display:block; width:100vw; height:2px; background:linear-gradient(90deg, #dd8467, #fb377d); margin-top:-1px; margin-left:300px; }
 	.works_item:nth-child(even) { position:relative; right:-200px; }
-	.works_item:nth-child(even) .works_itemCircle { position:relative; margin:-370px 0 0 -20px; }
+	.works_item:nth-child(even) .works_itemCircle { position:relative; margin:-350px 0 0 0; }
 	.works_item:nth-child(even) .works_itemImage { position:relative; }
 	.works_item:nth-child(even) .works_itemImage:before { position:absolute; top:50%; right:-100px; content:''; display:block; width:100vw; height:2px; background:linear-gradient(280deg, #dd8467, #fb377d); margin-top:-1px; margin-right:500px; }
 	.works_itemImage { z-index:1; position:relative; left:-200vw; }

@@ -58,7 +58,7 @@
 .works_body { margin:20px 0 0; padding:0; }
 .works_list { width:100%; }
 .works_list:after { clear:both; content:""; display:block; }
-.works_item { width:48%; padding-bottom:4%; margin-bottom:25%; float:left; position:relative; }
+.works_item { width:50%; padding-bottom:4%; margin-bottom:25%; float:left; position:relative; }
 .works_item:nth-child(odd) { padding-right:2%; }
 .works_item:nth-child(even) { padding-left:2%; }
 .works_itemLink { display:block; position:relative; }
