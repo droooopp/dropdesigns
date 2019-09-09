@@ -5,6 +5,11 @@
     __menuDrawer();
     __viewport();
     __heroGradation();
+    $('.grid').masonry({
+      itemSelector: '.grid-item',
+      isFitWidth: true,
+      gutter: 20
+    });
   });
 
 
